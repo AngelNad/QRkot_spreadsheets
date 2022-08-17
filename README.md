@@ -53,6 +53,18 @@ DATABASE_URL=dialect+driver://username:password@host:port/database # распо�
 SECRET=secret_key # секретный ключ приложения
 FIRST_SUPERUSER_EMAIL=admin@yandex.ru # email для создания суперюзера
 FIRST_SUPERUSER_PASSWORD=admin # пароль для создания суперюзера
+# Переменные ниже заполняются из JSON-файла с информацией о вашем сервисном аккаунте Google Cloude Platform
+TYPE=service_account
+PROJECT_ID=...
+PRIVATE_KEY_ID=...
+PRIVATE_KEY="..."
+CLIENT_EMAIL=...
+CLIENT_ID=...
+AUTH_URI=https://accounts.google.com/o/oauth2/auth
+TOKEN_URI=https://oauth2.googleapis.com/token
+AUTH_PROVIDER_X509_CERT_URL=https://www.googleapis.com/oauth2/v1/certs
+CLIENT_X509_CERT_URL=...
+EMAIL=email # ваш личный гугл-аккаунт
 ```
 
 Выполните миграции:
