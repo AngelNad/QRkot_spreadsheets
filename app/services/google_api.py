@@ -21,15 +21,16 @@ async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
             'locale': settings.locale_sheet
         },
         'sheets': [
-            {'properties': {'sheetType': 'GRID',
-                                   'sheetId': SHEET_ID,
-                                   'title': 'Лист1',
-                                   'gridProperties': {
-                                       'rowCount': SHEET_ROW_COUNT,
-                                       'columnCount': SHEET_COLUMN_COUNT
-                                   }
-                            }
-             }
+            {'properties': {
+                'sheetType': 'GRID',
+                'sheetId': SHEET_ID,
+                'title': 'Лист1',
+                'gridProperties': {
+                    'rowCount': SHEET_ROW_COUNT,
+                    'columnCount': SHEET_COLUMN_COUNT
+                }
+            }
+            }
         ]
     }
     response = await wrapper_services.as_service_account(
@@ -68,18 +69,16 @@ async def spreadsheets_update_value(
         ['Название проекта', 'Время сбора', 'Описание']
     ]
     for project in projects:
-        new_row = [
-            project.name,
-            str(project.close_date-project.create_date),
-            project.description
-        ]
+        new_row = [project.name,
+                   str(project.close_date-project.create_date),
+                   project.description]
         table_values.append(new_row)
 
     update_body = {
         'majorDimension': 'ROWS',
         'values': table_values
     }
-    response = await wrapper_services.as_service_account(
+    await wrapper_services.as_service_account(
         service.spreadsheets.values.update(
             spreadsheetId=spreadsheetid,
             range=RANGE_UPDATE,

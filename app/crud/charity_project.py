@@ -23,10 +23,8 @@ class CRUDCharityProject(CRUDBase):
         return db_project_id
 
     def extract_time(self, time_unit):
-        collection_time = (
-                extract(time_unit, CharityProject.close_date) -
-                extract(time_unit, CharityProject.create_date)
-        )
+        collection_time = (extract(time_unit, CharityProject.close_date) -
+                           extract(time_unit, CharityProject.create_date))
         return collection_time
 
     async def get_projects_by_completion_rate(self, session: AsyncSession):
