@@ -54,7 +54,7 @@ SECRET=secret_key # секретный ключ приложения
 FIRST_SUPERUSER_EMAIL=admin@yandex.ru # email для создания суперюзера
 FIRST_SUPERUSER_PASSWORD=admin # пароль для создания суперюзера
 # Переменные ниже заполняются из JSON-файла с информацией о вашем сервисном аккаунте Google Cloude Platform
-TYPE_ACCOUNT=service_account
+TYPE=service_account
 PROJECT_ID=...
 PRIVATE_KEY_ID=...
 PRIVATE_KEY="..."

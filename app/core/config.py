@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     secret: str = 'SECRET'
     first_superuser_email: Optional[EmailStr] = None
     first_superuser_password: Optional[str] = None
-    type_account: Optional[str] = None
+    type: Optional[str] = None
     project_id: Optional[str] = None
     private_key_id: Optional[str] = None
     private_key: Optional[str] = None
