@@ -62,6 +62,7 @@ class UserManager(
 async def get_user_manager(user_db=Depends(get_user_db)):
     yield UserManager(user_db)
 
+
 fastapi_users = FastAPIUsers[User, int](
     get_user_manager,
     [auth_backend],

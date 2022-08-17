@@ -28,10 +28,10 @@ async def get_report(
     projects = await charity_project_crud.get_projects_by_completion_rate(
         session
     )
-    spreadsheetid = await spreadsheets_create(wrapper_services)
-    await set_user_permissions(spreadsheetid, wrapper_services)
-    await spreadsheets_update_value(spreadsheetid,
+    spreadsheet_id = await spreadsheets_create(wrapper_services)
+    await set_user_permissions(spreadsheet_id, wrapper_services)
+    await spreadsheets_update_value(spreadsheet_id,
                                     projects,
                                     wrapper_services)
-    print(f'Отчёт: https://docs.google.com/spreadsheets/d/{spreadsheetid}')
+    print(f'Отчёт: https://docs.google.com/spreadsheets/d/{spreadsheet_id}')
     return projects

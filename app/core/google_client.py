@@ -9,7 +9,7 @@ SCOPES = [
 ]
 
 INFO = {
-    'type': settings.type,
+    'type_account': settings.type_account,
     'project_id': settings.project_id,
     'private_key_id': settings.private_key_id,
     'private_key': settings.private_key,
